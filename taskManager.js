@@ -1,8 +1,10 @@
 class Task {
-  constructor(id, description) {
+  constructor(id, description, priority = "Medium", dueDate = null) {
     this.id = id;
     this.description = description;
     this.completed = false;
+    this.priority = priority;
+    this.dueDate = dueDate ? new Date(dueDate) : null;
   }
 }
 
@@ -12,8 +14,8 @@ class TaskManager {
     this.nextId = 1;
   }
 
-  addTask(description) {
-    const task = new Task(this.nextId++, description);
+  addTask(description, priority = "Medium", dueDate = null) {
+    const task = new Task(this.nextId++, description, priority, dueDate);
     this.tasks.push(task);
   }
 
