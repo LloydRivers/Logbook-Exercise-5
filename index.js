@@ -26,3 +26,7 @@ taskManager.listTasks();
 const completedTasks = taskManager.filterTasks((task) => task.completed);
 console.log("\nCompleted Tasks:");
 console.log(completedTasks);
+
+// Sorted and detailed tasks
+console.log("\n📋 Sorted and Detailed Tasks:");
+taskManager.presentTasks();
